@@ -60,8 +60,11 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
-    
+    UIViewController *someOtherVC = [UIViewController new];
+    [sut presentViewController:someOtherVC animated:NO completion:nil];
+
+//    [sut showAlert:nil];
+
     XCTAssertEqual(alertVerifier.presentedCount, (NSUInteger)1);
 }
 
