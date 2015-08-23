@@ -21,9 +21,10 @@
 
 - (IBAction)showActionSheet:(id)sender
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title"
-                                                                                     message:@"Message"
-                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alertController = [UIAlertController new];
+    alertController.title = @"Title";
+    alertController.message = @"Message";
+
     [self setUpActionsForAlertController:alertController];
 
     UIPopoverPresentationController *popover = alertController.popoverPresentationController;
